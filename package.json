@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-boilerplate-react-vite",
+  "name": "auto-filling-form-chrome-extension",
   "version": "0.0.1",
-  "description": "chrome extension boilerplate",
+  "description": "chrome extension",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tsc --noEmit && vite build",
-    "build:watch": "__DEV__=true vite build --watch",
+    "build:watch": "set __DEV__=true vite build --watch",
     "build:hmr": "rollup --config utils/reload/rollup.config.ts",
     "wss": "node utils/reload/initReloadServer.js",
     "dev": "npm run build:hmr && (run-p wss build:watch)",
@@ -42,6 +42,9 @@
     "jest-environment-jsdom": "29.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "2.7.1",
+    "react-color": "^2.19.3",
+    "react-draggable": "^4.4.5",
+    "react-resizable": "^3.0.4",
     "rollup": "2.79.1",
     "sass": "1.55.0",
     "ts-jest": "29.0.2",

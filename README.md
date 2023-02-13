@@ -87,3 +87,10 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 ---
 
 [Jonghakseo](https://nookpi.tistory.com/)
+
+
+
+============================
+NewTab: Sticky board with todos
+Popup: Scrapped Jobs URLs suggested
+Options: Add form options for filling automatically

@@ -17,6 +17,10 @@ const manifest: chrome.runtime.ManifestV3 = {
   chrome_url_overrides: {
     newtab: "src/pages/newtab/index.html",
   },
+  permissions: [
+    "bookmarks",
+    "favicon",
+  ],
   icons: {
     "128": "icon-128.png",
   },
@@ -35,8 +39,9 @@ const manifest: chrome.runtime.ManifestV3 = {
         "assets/css/*.css",
         "icon-128.png",
         "icon-34.png",
+        "_favicon/*",
       ],
-      matches: ["*://*/*"],
+      matches: ["*://*/*", "<all_urls>"],
     },
   ],
 };
