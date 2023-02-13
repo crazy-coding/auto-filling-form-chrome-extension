@@ -61,7 +61,7 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 
 ### New Tab <a name="newtab"></a>
 
-[Screenshot 2023-02-13 174100](https://user-images.githubusercontent.com/51104065/218593095-0e2951e3-557e-4e05-89b7-7278c514e3f9.png)
+<img width="920" alt="popup" src="https://user-images.githubusercontent.com/51104065/218593095-0e2951e3-557e-4e05-89b7-7278c514e3f9.png">
 
 ### Popup <a name="popup"></a>
 
