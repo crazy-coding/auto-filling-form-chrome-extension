@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "@pages/newtab/Newtab.scss";
 import WidgetLayout from "./components/WidgetLayout";
 import BookmarkBar from "./components/BookmarkBar";

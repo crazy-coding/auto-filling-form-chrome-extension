@@ -13,6 +13,10 @@ h6 {
   color: $myColor;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   height: 100vh;
   display: flex;
@@ -106,6 +110,7 @@ h6 {
 
       span {
         width: 100%;
+        cursor: context-menu;
       }
     }
 
@@ -117,7 +122,18 @@ h6 {
       }
 
       ul.WidgetMenuList {
+        position: absolute;
+        top: 7px;
+        background: lightgray;
+        right: 2px;
+        padding: 2px;
 
+        button {
+          width: 100%;
+          height: auto;
+          padding: 2px;
+          white-space: nowrap;
+        }
       }
 
       .widget-form {
@@ -130,10 +146,6 @@ h6 {
         padding: 3px;
         display: flex;
         flex-direction: column;
-
-        input {
-          width: 192px;
-        }
 
         button {
           width: auto;
@@ -197,3 +209,19 @@ h6 {
   }
 }
 
+.StickyNote {
+  textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+    background: none;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    resize: none;
+    width: 100%;
+    height: 100%;
+  }
+}

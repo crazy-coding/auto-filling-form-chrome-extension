@@ -72,9 +72,9 @@ const WidgetMenu = ({ opened, wTitle, wStyle, onTitleChange, onBGChange, onDelet
           <button onClick={() => setOpen(!open)}>...</button>
           {open && (
             <ul className="WidgetMenuList">
-              <li onClick={() => closeMenu(() => setTitleForm(true))}>Title Change</li>
-              <li onClick={() => closeMenu(() => setBGForm(true))}>Background</li>
-              <li onClick={() => closeMenu(() => setDeleteForm(true))}>Delete</li>
+              <button onClick={() => closeMenu(() => setTitleForm(true))}>Title Change</button>
+              <button onClick={() => closeMenu(() => setBGForm(true))}>Background</button>
+              <button onClick={() => closeMenu(() => setDeleteForm(true))}>Delete</button>
             </ul>
           )}
         </>

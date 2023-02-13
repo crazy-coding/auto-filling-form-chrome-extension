@@ -7,18 +7,18 @@ import SuggestedLinks from "./SuggestedLinks";
 import WidgetMenu from "./WidgetMenu";
 import WorldClock from "./WorldClock";
 
-const WidgetComponent = (widget, meta) => {
-  switch (widget) {
-    case "google_calendar": return <GoogleCalendar {...meta} />
-    case "suggested_links": return <SuggestedLinks {...meta} />
-    case "world_clock": return <WorldClock {...meta} />
-    case "sticky_note": return <StickyNote {...meta} />
+const WidgetComponent = (props) => {
+  switch (props.widget) {
+    case "google_calendar": return <GoogleCalendar {...props} />
+    case "suggested_links": return <SuggestedLinks {...props} />
+    case "world_clock": return <WorldClock {...props} />
+    case "sticky_note": return <StickyNote {...props} />
     default: return <></>
   }
 }
 
 const WidgetLayout = ({ func, ...props }) => {
-  const { id, title, widget, position, style, minimized, meta } = props;
+  const { id, title, position, style, minimized } = props;
 
   const [width, setWidth] = useState(style.width);
   const [height, setHeight] = useState(style.height);
@@ -79,7 +79,7 @@ const WidgetLayout = ({ func, ...props }) => {
           </div>
           <WidgetMenu opened={true} wTitle={title} wStyle={style} onTitleChange={onTitleChange} onBGChange={onBGChange} onDelete={onDelete} />
         </header>
-        {!minimized && WidgetComponent(widget, meta)}
+        {!minimized && <WidgetComponent { ...props } func={func} />}
       </div>
     </Resizable>
   </Draggable>
