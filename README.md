@@ -61,14 +61,15 @@ This boilerplate is made for creating chrome extensions using React and Typescri
 
 ### New Tab <a name="newtab"></a>
 
-<img width="971" src="https://user-images.githubusercontent.com/53500778/162631646-cd40976b-b737-43d0-8e6a-6ac090a2e2d4.png">
+[Screenshot 2023-02-13 174100](https://user-images.githubusercontent.com/51104065/218593095-0e2951e3-557e-4e05-89b7-7278c514e3f9.png)
 
 ### Popup <a name="popup"></a>
 
 <img width="314" alt="popup" src="https://user-images.githubusercontent.com/53500778/203561728-23517d46-12e3-4139-8a4f-e0b2f22a6ab3.png">
 
 
-## Documents <a name="documents"></a>
+## Documents <a name="documents"></a>!
+
 - [Vite Plugin](https://vitejs.dev/guide/api-plugin.html)
 - [ChromeExtension](https://developer.chrome.com/docs/extensions/mv3/)
 - [Rollup](https://rollupjs.org/guide/en/)
