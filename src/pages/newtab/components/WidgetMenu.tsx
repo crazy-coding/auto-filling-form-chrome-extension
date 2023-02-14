@@ -62,9 +62,9 @@ const WidgetMenu = ({ opened, wTitle, wStyle, onTitleChange, onBGChange, onDelet
     <div className="WidgetMenu">
       {opened && (
         <div className="WidgetMenuList">
-          <button onClick={() => closeMenu(() => setTitleForm(true))}>/</button>
-          <button onClick={() => closeMenu(() => setBGForm(true))} style={{ backgroundImage: 'linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)' }}></button>
-          <button onClick={() => closeMenu(() => setDeleteForm(true))}>X</button>
+          <button className="WidgetHeaderButton" onClick={() => closeMenu(() => setTitleForm(true))}>/</button>
+          <button className="WidgetHeaderButton" onClick={() => closeMenu(() => setBGForm(true))} style={{ backgroundImage: 'linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)' }}></button>
+          <button className="WidgetHeaderButton" onClick={() => closeMenu(() => setDeleteForm(true))}>X</button>
         </div>
       )}
       {!opened && (

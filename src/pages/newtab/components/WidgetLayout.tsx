@@ -74,7 +74,7 @@ const WidgetLayout = ({ func, ...props }) => {
       <div className="WidgetLayout box" id={id} style={{ ...style, width, height }}>
         <header className="WidgetHeader">
           <div className="WidgetTitleBar">
-            <button onClick={onMinimize}>-</button>
+            <button className="WidgetHeaderButton" onClick={onMinimize}>-</button>
             <span className="WidgetMove">{title}</span>
           </div>
           <WidgetMenu opened={true} wTitle={title} wStyle={style} onTitleChange={onTitleChange} onBGChange={onBGChange} onDelete={onDelete} />

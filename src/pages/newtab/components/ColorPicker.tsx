@@ -24,8 +24,8 @@ const ColorPicker = ({ value, onChange }) => {
           onChange ={(color) => onChangeComplete(color.hex)}
         />
         <div className="submit-buttons">
-          <button className="" onClick={() => closePickerForm(() => onChange(color))}>OK</button>
-          <button className="" onClick={() => closePickerForm(() => setColor(value))}>Cancel</button>
+          <button onClick={() => closePickerForm(() => onChange(color))}>OK</button>
+          <button onClick={() => closePickerForm(() => setColor(value))}>Cancel</button>
         </div>
       </div>}
     </div>

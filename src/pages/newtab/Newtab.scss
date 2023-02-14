@@ -3,6 +3,8 @@ $small: 400px;
 $medium: 768px;
 $large: 1180px;
 $extraLarge: 1400px;
+$formBackground: lightgrey;
+$formBorder: darkgrey;
 
 h1,
 h2,
@@ -10,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $myColor;
+  margin: 0;
 }
 
 * {
@@ -59,27 +61,17 @@ h6 {
   top: 0;
   right: 0;
   padding: 3px;
-
-  button {
-    margin-left: 3px
-  }
 }
 
 .NewWidgetForm {
   position: absolute;
-  background: lightgrey;
+  background: $formBackground;
   z-index: 999999;
   right: 3px;
   padding: 3px;
   margin-top: 2px;
   display: flex;
   flex-direction: column;
-
-  .submit-buttons {
-    margin-top: 5px;
-    display: flex;
-    justify-content: end;
-  }
 }
 
 .WidgetLayout {
@@ -124,7 +116,7 @@ h6 {
       ul.WidgetMenuList {
         position: absolute;
         top: 7px;
-        background: lightgray;
+        background: $formBackground;
         right: 2px;
         padding: 2px;
 
@@ -135,39 +127,15 @@ h6 {
           white-space: nowrap;
         }
       }
-
-      .widget-form {
-        width: 200px;
-        color: black;
-        position: absolute;
-        top: 20px;
-        right: 0;
-        background: lightgrey;
-        padding: 3px;
-        display: flex;
-        flex-direction: column;
-
-        button {
-          width: auto;
-          height: auto;
-          padding: 2px;
-        }
-
-        .submit-buttons {
-          margin-top: 5px;
-          display: flex;
-          justify-content: end;
-        }
-      }
     }
 
-    button {
+    button.WidgetHeaderButton {
       width: 15px;
       height: 15px;
       padding: 0;
       font-size: 12px;
       margin: 2px;
-      border: solid 1px lightgray;
+      border: solid 1px $formBorder;
     }
 
     .WidgetMove {
@@ -199,13 +167,13 @@ h6 {
 .ColorPicker {
   width: 20px;
   height: 20px;
-  border: 1px solid darkgray;
+  border: 1px solid $formBorder;
 
   .ColorPickerForm {
     padding: 1px;
     position: absolute;
     top: 40;
-    background: lightcyan;
+    background: $formBackground;
   }
 }
 
@@ -224,4 +192,121 @@ h6 {
     width: 100%;
     height: 100%;
   }
+}
+
+.submit-buttons {
+  margin-top: 5px;
+  display: flex;
+  justify-content: end;
+
+  button {
+    margin-right: 2px;
+  }
+}
+
+.SuggestedLinks {
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2px;
+
+  .SuggestedLinksList {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5px;
+
+    li {
+      margin: 2px;
+    }
+  }
+
+  .AddFolderButton {
+    padding: 3px;
+    text-align: center;
+
+    button {
+      padding: 0 20px;
+      margin: 1px;
+    }
+  }
+
+  .SuggestedLinksFolder {
+    position: relative;
+
+    .SLFolderTitle {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .AddFolderForm {
+    bottom: 25px;
+    top: auto;
+  }
+
+  .AddLinkForm {
+    position: absolute;
+  }
+}
+
+.widget-form {
+  width: 200px;
+  color: black;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: $formBackground;
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+  z-index: 99999;
+
+  button {
+    width: auto;
+    height: auto;
+    padding: 2px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.global-form {
+  position: fixed;
+  left: auto;
+  right: auto;
+  width: 500px;
+  background: $formBackground;
+  border: 1px solid $formBorder;
+  top: 50px;
+  padding: 20px;
+  z-index: 999999999999;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.borderless-btn {
+  border: none;
+  padding: 0 4px;
+  font-weight: bold;
+  background: none;
 }
