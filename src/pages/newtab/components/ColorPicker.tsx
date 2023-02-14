@@ -5,10 +5,6 @@ const ColorPicker = ({ value, onChange }) => {
   const [open, setOpen] = useState(false);
   const [color, setColor] = useState(value);
 
-  const onChangeComplete = (color) => {
-    setColor(color);
-  }
-
   const closePickerForm = (callback) => {
     setOpen(false);
     callback();
@@ -20,8 +16,8 @@ const ColorPicker = ({ value, onChange }) => {
       {open && <div className="ColorPickerForm">
         <SketchPicker
           width={180}
-          color={ value }
-          onChange ={(color) => onChangeComplete(color.hex)}
+          color={color}
+          onChange={(color) => setColor(color.hex)}
         />
         <div className="submit-buttons">
           <button onClick={() => closePickerForm(() => onChange(color))}>OK</button>
