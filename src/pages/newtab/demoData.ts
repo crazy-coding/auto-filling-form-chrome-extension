@@ -8,7 +8,7 @@ export const demoData = {
       style: { width: 400, height: 300, zIndex: 1 },
       minimized: false,
       meta: {
-        // embedLink: 'https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=0&showDate=1&mode=AGENDA&showTz=0&showCalendars=1&showTabs=1&showPrint=0&src=ZGV2amFtZXMyMTRAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZGV2amFtZXM0MjRAZ21haWwuY29t&color=%23039BE5&color=%2333B679&color=%23B39DDB'
+        embedLink: 'https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=0&showDate=1&mode=AGENDA&showTz=0&showCalendars=1&showTabs=1&showPrint=0&src=ZGV2amFtZXMyMTRAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZGV2amFtZXM0MjRAZ21haWwuY29t&color=%23039BE5&color=%2333B679&color=%23B39DDB'
       }
     }, 
     { 

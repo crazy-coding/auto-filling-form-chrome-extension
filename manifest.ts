@@ -20,6 +20,7 @@ const manifest: chrome.runtime.ManifestV3 = {
   permissions: [
     "bookmarks",
     "favicon",
+    "storage"
   ],
   icons: {
     "128": "icon-128.png",

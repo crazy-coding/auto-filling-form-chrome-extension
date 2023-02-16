@@ -10,12 +10,14 @@ const Newtab = () => {
   const [maxZIndex, setMaxZIndex] = useState(0);
 
   useEffect(() => {
-    setWidgets(JSON.parse(localStorage.getItem('widgets')) || demoData.widgets);
+    chrome.storage.sync.get(['widgets']).then((result) => {
+      setWidgets(JSON.parse(result.widgets) || demoData.widgets);
+    });
   }, []);
 
   useEffect(() => {
     setMaxZIndex(widgets.reduce((max, widget) => widget.style.zIndex > max ? widget.style.zIndex : max, 0));
-    localStorage.setItem('widgets', JSON.stringify(widgets));
+    chrome.storage.sync.set({ 'widgets': JSON.stringify(widgets) });
   }, [widgets])
 
   const wUpdate = (newWidget) => {

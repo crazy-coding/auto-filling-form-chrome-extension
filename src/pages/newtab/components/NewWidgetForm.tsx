@@ -3,9 +3,9 @@ import { useState } from "react";
 const NewWidgetForm = ({ func }) => {
   const [open, setOpen] = useState(false);
 
-  const [widget, setWidget] = useState('');
+  const [widget, setWidget] = useState('google_calendar');
   const [title, setTitle] = useState('');
-  const [meta, setMeta] = useState('');
+  const [meta, setMeta] = useState({});
 
   const createNewWidget = () => {
     setOpen(false);
@@ -18,6 +18,8 @@ const NewWidgetForm = ({ func }) => {
       minimized: false,
       meta
     });
+    setTitle('');
+    setMeta({});
   }
 
   return <>
@@ -33,7 +35,7 @@ const NewWidgetForm = ({ func }) => {
       <label>Title:</label>
       <input value={title} onChange={(e) => setTitle(e.target.value)} />
       <label>Meta:</label>
-      <textarea onChange={(e) => setMeta(e.target.value)} rows={6}>{meta}</textarea>
+      <textarea onChange={(e) => setMeta(JSON.parse(e.target.value))} rows={6}>{JSON.stringify(meta)}</textarea>
 
       <div className="submit-buttons">
         <button onClick={createNewWidget}>Submit</button>
