@@ -1,7 +1,22 @@
 import { useCallback, useEffect, useState } from "react";
 
+const DEFAULT_FILL = {
+  "category": [
+    "example"
+  ],
+  "id": "example",
+  "ids": [
+    "example"
+  ],
+  "labels": [
+    "Example"
+  ],
+  "meta": [],
+  "title": "example"
+};
+
 const AutoFillForm = () => {
-  const [autoFill, setAutoFill] = useState({});
+  const [autoFill, setAutoFill] = useState(DEFAULT_FILL);
 
   const onSubmit = useCallback((e) => {
     e.preventDefault();
@@ -11,6 +26,9 @@ const AutoFillForm = () => {
         const exist = formData.filter(({ id }) => autoFill?.id === id);
         if (exist.length > 0) {
           chrome.storage.sync.set({ 'formData': formData.map((formD) => {
+            if (['customYes', 'customNo'].includes(formD.id)) {
+              return { ...formD, labels: [ ...formD.labels, ...autoFill.labels ] }
+            }
             if (formD.id === autoFill?.id) {
               return autoFill;
             } else {
@@ -20,6 +38,7 @@ const AutoFillForm = () => {
         } else {
           chrome.storage.sync.set({ 'formData': [ ...formData, autoFill ] });
         }
+        setAutoFill(DEFAULT_FILL);
       });
     }
   }, [autoFill]);
