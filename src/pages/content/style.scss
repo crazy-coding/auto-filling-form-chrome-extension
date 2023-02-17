@@ -3,3 +3,27 @@
 .content-view {
   font-size: 30px;
 }
+
+.AutoFillModal {
+  position: fixed;
+  width: 400px;
+  right: 0;
+  top: 0;
+  background: white;
+  z-index: 99999999;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2px;
+    padding: 5px;
+
+    li {
+      cursor: pointer;
+      font-size: 12px;
+      padding: 2px 5px;
+      border: 1px solid lightgrey;
+    }
+  }
+}
