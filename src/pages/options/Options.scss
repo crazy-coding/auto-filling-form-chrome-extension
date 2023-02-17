@@ -1,0 +1,16 @@
+.OptionsContainer {
+  max-width: 800px;
+  margin: 50px auto;
+
+  .ProfileForm {
+  }
+
+  .BackupForm {
+  }
+
+  form {
+    display: grid;
+    grid-gap: 5px;
+    word-break: break-all;
+  }
+}

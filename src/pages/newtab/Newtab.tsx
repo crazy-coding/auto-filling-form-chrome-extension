@@ -3,7 +3,6 @@ import "@pages/newtab/Newtab.scss";
 import WidgetLayout from "./components/WidgetLayout";
 import BookmarkBar from "./components/BookmarkBar";
 import NewWidgetForm from "./components/NewWidgetForm";
-import { demoData } from "./demoData";
 
 const Newtab = () => {
   const [widgets, setWidgets] = useState([]);
@@ -11,17 +10,17 @@ const Newtab = () => {
 
   useEffect(() => {
     chrome.storage.sync.get(['widgets']).then((result) => {
-      setWidgets(JSON.parse(result.widgets) || demoData.widgets);
+      setWidgets(result.widgets);
     });
   }, []);
 
   useEffect(() => {
     setMaxZIndex(widgets.reduce((max, widget) => widget.style.zIndex > max ? widget.style.zIndex : max, 0));
-    chrome.storage.sync.set({ 'widgets': JSON.stringify(widgets) });
+    chrome.storage.sync.set({ 'widgets': widgets });
   }, [widgets])
 
   const wUpdate = (newWidget) => {
-    console.log('update', newWidget)
+    // console.log('update', newWidget)
     const exist = widgets.filter((widget) => widget.id === newWidget.id);
     if (exist.length > 0) {
       setWidgets(widgets.map((widget) => {
@@ -37,7 +36,7 @@ const Newtab = () => {
   }
 
   const wDelete = (newWidget) => {
-    console.log('delete', newWidget)
+    // console.log('delete', newWidget)
     setWidgets(widgets.filter((widget) => widget.id !== newWidget.id));
   }
 

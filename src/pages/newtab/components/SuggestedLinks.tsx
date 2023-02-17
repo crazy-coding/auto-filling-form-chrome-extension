@@ -77,7 +77,7 @@ const SuggestedLink = ({ folder, setLinks, links, removeMode }) => {
 const SuggestedLinks = ({ func, ...props }) => {
   const { meta } = props;
 
-  const [links, setLinks] = useState(meta.links);
+  const [links, setLinks] = useState(meta?.links || []);
   const [openAddFolderForm, setOpenAddFolderForm] = useState(false);
   const [removeMode, setRemoveMode] = useState(false);
 

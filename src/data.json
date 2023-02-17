@@ -1,0 +1,183 @@
+{
+  "formData": [
+    {
+      "category": [
+        "name"
+      ],
+      "id": "firstName",
+      "ids": [
+        "first_name",
+        "firstname",
+        "firstName"
+      ],
+      "labels": [
+        "First Name"
+      ],
+      "meta": [],
+      "title": "First Name"
+    },
+    {
+      "category": [
+        "name"
+      ],
+      "id": "lastName",
+      "ids": [
+        "last_name",
+        "lastname",
+        "firstName",
+        "second_name",
+        "secondname",
+        "secondName"
+      ],
+      "labels": [
+        "First Name"
+      ],
+      "meta": [],
+      "title": "Last Name"
+    }
+  ],
+  "profile": {
+    "birthDay": [
+      "24",
+      "24th"
+    ],
+    "birthMonth": [
+      "04",
+      "April"
+    ],
+    "birthYear": "1988",
+    "countryCode": "+1",
+    "dateOfBirth": "04/24/1988",
+    "dlNumber": "58794391",
+    "email": "devjames214@gmail.com",
+    "firstName": "James",
+    "fullName": "James David Lee",
+    "githubURL": "https://github.com/crazy-coding",
+    "homeAddress": "7508 Chads Circle",
+    "homeApt": "7508",
+    "homeCity": "Jonesboro",
+    "homeCountry": [
+      "United State",
+      "USA",
+      "US"
+    ],
+    "homeCounty": "Clayton",
+    "homeFullAddress": "7508 Chads Circle, Jonesboro, GA, 30236",
+    "homeState": [
+      "Georgia",
+      "GA"
+    ],
+    "homeStreet": "Chads Circle",
+    "homeZipcode": "30236",
+    "lastName": "Lee",
+    "linkedinURL": "https://www.linkedin.com/in/james214/",
+    "middleName": "David",
+    "mobile": "9192345055",
+    "mobileFullNumber": "+1 (919) 234 5055",
+    "portfolioURL": "http://jameslee.myinfos.website/",
+    "portfolioURLs": [
+      "https://www.bplay.bet.ar/",
+      "https://www.wantable.com/",
+      "https://www.walmart.com/subscriptions/manage"
+    ],
+    "pronounce": "He/Him",
+    "referrence": [
+      {
+        "email": "trevorfrie99@gmail.com",
+        "mobile": "+1 608 620 1654",
+        "name": "Trevor Frie",
+        "title": "AndySol Project Manager"
+      },
+      {
+        "email": "leo.art429@gmail.com",
+        "mobile": "+1 315 636 4767",
+        "name": "Leonardo Long",
+        "title": "Wantable lead developer"
+      }
+    ],
+    "sex": [
+      "M",
+      "Male"
+    ],
+    "shippingAddress": "12607 W Vista Paseo Dr",
+    "shippingApt": "12607",
+    "shippingCity": "Litchfield Park",
+    "shippingCountry": [
+      "United State",
+      "USA",
+      "US"
+    ],
+    "shippingCounty": "",
+    "shippingFullAddress": "12607 W Vista Paseo Dr, Litchfield Park, AZ 85340",
+    "shippingState": [
+      "Arizona",
+      "AZ"
+    ],
+    "shippingStreet": "W Vista Paseo Dr",
+    "shippingZipcode": "85340",
+    "socialNumber": "489980295",
+    "timezone": "EST",
+    "title": "Fullstack Developer",
+    "websiteURL": "http://jameslee.myinfos.website/",
+    "workExperience": [
+      {},
+      {}
+    ]
+  },
+  "widgets": [
+    {
+      "id": 1676590576308,
+      "meta": {
+        "content": "adfasdfa"
+      },
+      "minimized": false,
+      "position": {
+        "x": 724,
+        "y": 124
+      },
+      "style": {
+        "height": 592,
+        "width": 665,
+        "zIndex": 31
+      },
+      "title": "",
+      "widget": "sticky_note"
+    },
+    {
+      "id": 1676595315678,
+      "meta": {
+        "embedLink": "https://calendar.google.com/calendar/embed?wkst=1&bgcolor=%23ffffff&ctz=America%2FNew_York&showTitle=0&showNav=0&showDate=1&mode=AGENDA&showTz=0&showCalendars=1&showTabs=1&showPrint=0&src=ZGV2amFtZXMyMTRAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZGV2amFtZXM0MjRAZ21haWwuY29t&color=%23039BE5&color=%2333B679&color=%23B39DDB"
+      },
+      "minimized": false,
+      "position": {
+        "x": -2,
+        "y": 595
+      },
+      "style": {
+        "height": 244,
+        "width": 232,
+        "zIndex": 27
+      },
+      "title": "My Schedule",
+      "widget": "google_calendar"
+    },
+    {
+      "id": 1676595348316,
+      "meta": {
+        "links": []
+      },
+      "minimized": false,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "style": {
+        "height": 594,
+        "width": 232,
+        "zIndex": 34
+      },
+      "title": "Review",
+      "widget": "suggested_links"
+    }
+  ]
+}
