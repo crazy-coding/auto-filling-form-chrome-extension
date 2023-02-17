@@ -18,7 +18,6 @@ const ProfileForm = () => {
       <h3>Profile Form</h3>
       <form onSubmit={onSubmit}>
         <textarea rows={10} onChange={(e) => setProfile(JSON.parse(e.target.value))}>{JSON.stringify(profile)}</textarea>
-        {JSON.stringify(profile)}
         <button type="submit">Submit</button>
       </form>
     </div>
