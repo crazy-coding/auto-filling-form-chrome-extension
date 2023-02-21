@@ -1,18 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 
 const DEFAULT_FILL = {
-  "category": [
-    "example"
-  ],
   "id": "example",
   "ids": [
     "example"
   ],
   "labels": [
     "Example"
-  ],
-  "meta": [],
-  "title": "example"
+  ]
 };
 
 const AutoFillForm = () => {
