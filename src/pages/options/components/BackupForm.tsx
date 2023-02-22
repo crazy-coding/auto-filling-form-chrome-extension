@@ -12,7 +12,7 @@ const BackupForm = () => {
   };
   
   useEffect(() => {
-    chrome.storage.sync.get(['widgets', 'profile', 'formData', 'popup']).then((result) => {
+    chrome.storage.sync.get().then((result) => {
       console.log(result)
       setData(result);
     });
