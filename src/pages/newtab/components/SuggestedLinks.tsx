@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import JobLinks from "./JobLinks";
 
-const SuggestedLink = ({ folder, setLinks, links, removeMode }) => {
+export const SuggestedLink = ({ folder, setLinks, links, removeMode = false }) => {
   const [openAddLinkForm, setOpenAddLinkForm] = useState(false);
 
   const removeFolder = () => {
@@ -66,9 +67,9 @@ const SuggestedLink = ({ folder, setLinks, links, removeMode }) => {
       <AddLinkForm />
       <ul className="SuggestedLinksList">
         {folder.list.map((link) => <li key={link.title}>
-            <a href={link.url} title={`${link.title} - ${link.description}`}>{link.title}</a>
-            {removeMode && <button className="borderless-btn" onClick={() => removeLink(link)}>x</button>}
-          </li>)}
+          <a href={link.url} title={`${link.title} - ${link.description}`}>{link.title}</a>
+          {removeMode && <button className="borderless-btn" onClick={() => removeLink(link)}>x</button>}
+        </li>)}
       </ul>
     </div>
   )
@@ -112,6 +113,7 @@ const SuggestedLinks = ({ func, ...props }) => {
     <div className="content">
       {links.map((folder) => <SuggestedLink folder={folder} links={links} setLinks={setLinks} removeMode={removeMode} />)}
     </div>
+    <JobLinks />
     <AddFolderForm />
     <div className="AddFolderButton">
       <button onClick={() => setOpenAddFolderForm(true)}>+</button>

@@ -1,3 +1,7 @@
+const ExceededMONTHLYQuota = {
+  monthlyLimit: true
+};
+
 export async function jSearchEngine() {
   console.log("jSearchEngine Loaded");
 
@@ -6,14 +10,15 @@ export async function jSearchEngine() {
   
   if (isNeededScrap(jSearchSettings.lastScrapDate)) {
     alert("You have to wait a few minutes to complete the scraping process!");
-    console.log("jSearchEngine Start")
+    console.log("jSearchEngine Start", new Date().getTime() - 3600 * 24 * 7)
 
-    const jSearchJobs = (await chrome.storage.local.get("jSearchJobs")).jSearchJobs || [];
+    const jSearchJobs = (await chrome.storage.local.get("jSearchJobs")).jSearchJobs.filter((job) => job.job_posted_at_timestamp > new Date().getTime() - 3600 * 24 * 7) || [];
     const jSJobsIds = jSearchJobs.map((jSJob) => jSJob.job_id);
     
     let keyIndex = 0;
     let page = 1;
     let loop = true;
+    let updated = false;
 
     while (loop) {
       try {
@@ -21,22 +26,26 @@ export async function jSearchEngine() {
         const filteredJobs = jobs.filter((job) => !jSJobsIds.includes(job.job_id));
         await chrome.storage.local.set({ "jSearchJobs": [...jSearchJobs, ...filteredJobs] });
         
+        updated = true;
+
         if (page === 3) {
           loop = false;
         }
         page++;
       } catch (err) {
-        console.log("try", err)
-        if (err === "expired") {
+        if (ExceededMONTHLYQuota === err && jSearchSettings.APIKeys.length > keyIndex + 1) {
           keyIndex++;
+        } else {
+          loop = false;
         }
-        loop = false;
       }
     }
 
-    await chrome.storage.sync.set({ "settings": { ...settings,
-      jSearchSettings: {...jSearchSettings, lastScrapDate: getToday()}
-    } })
+    if (updated) {
+      await chrome.storage.sync.set({ "settings": { ...settings,
+        jSearchSettings: {...jSearchSettings, lastScrapDate: getToday()}
+      } });
+    }
 
     alert("Scraping process completed!");
     console.log("jSearchEngine End")
@@ -62,10 +71,13 @@ async function fetchJobs(settings) {
   
   const resp = await fetch(url, options);
   const data = await resp.json();
+
+  if (resp.status === 429) throw ExceededMONTHLYQuota;
+
   return data.data || [];
 }
 
-function isNeededScrap(date) {
+export function isNeededScrap(date) {
   const today = new Date(getToday());
   if (![6, 0].includes(today.getDay())) {
     return  today > new Date(date);

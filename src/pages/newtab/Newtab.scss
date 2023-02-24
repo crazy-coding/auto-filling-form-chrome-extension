@@ -218,6 +218,12 @@ h6 {
     flex-wrap: wrap;
     padding-left: 5px;
 
+    a {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
     li {
       margin: 2px;
     }
