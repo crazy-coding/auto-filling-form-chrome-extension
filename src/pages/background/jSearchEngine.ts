@@ -64,7 +64,7 @@ async function fetchJobs(settings) {
   const url = settings.baseURL + "?" + (new URLSearchParams({
       query: settings.query,
       num_pages: settings.numPages, // 1 - 20
-      date_posted: settings.datePosted, //"today", "3days" ... 
+      date_posted: settings.datePosted, // "today", "3days" ... 
       remote_jobs_only: settings.remoteJobsOnly,
       page: settings.page
     }))
@@ -72,7 +72,7 @@ async function fetchJobs(settings) {
   const resp = await fetch(url, options);
   const data = await resp.json();
 
-  if (resp.status === 429) throw ExceededMONTHLYQuota;
+  if (resp.status !== 200) throw ExceededMONTHLYQuota;
 
   return data.data || [];
 }
