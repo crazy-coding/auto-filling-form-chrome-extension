@@ -12,7 +12,7 @@ export async function jSearchEngine() {
     alert("You have to wait a few minutes to complete the scraping process!");
     console.log("jSearchEngine Start", new Date().getTime() - 3600 * 24 * 7)
 
-    const jSearchJobs = (await chrome.storage.local.get("jSearchJobs")).jSearchJobs.filter((job) => job.job_posted_at_timestamp > new Date().getTime() - 3600 * 24 * 7) || [];
+    const jSearchJobs = ((await chrome.storage.local.get("jSearchJobs")).jSearchJobs || []).filter((job) => job.job_posted_at_timestamp > new Date().getTime() - 3600 * 24 * 7) || [];
     const jSJobsIds = jSearchJobs.map((jSJob) => jSJob.job_id);
     
     let keyIndex = 0;
@@ -72,6 +72,7 @@ async function fetchJobs(settings) {
   const resp = await fetch(url, options);
   const data = await resp.json();
 
+  console.log(resp, data)
   if (resp.status !== 200) throw ExceededMONTHLYQuota;
 
   return data.data || [];

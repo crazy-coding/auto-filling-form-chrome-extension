@@ -22,7 +22,7 @@ const JobLinks = (props) => {
         notAgreeSkills: [".Net", "Ruby on Rails"]
       }
       const filterRegex = new RegExp(`${filterOption.notAgreeSkills.join("|")}/i`, "g");
-      const list = jSearchJobs.sort((a, b) => b.job_posted_at_timestamp - a.job_posted_at_timestamp).filter((job) => !filterRegex.test(job.job_description))
+      const list = (jSearchJobs || []).sort((a, b) => b.job_posted_at_timestamp - a.job_posted_at_timestamp).filter((job) => !filterRegex.test(job.job_description))
       setLinks(list);
       setVisitList(visitedList || []);
     });
