@@ -12,7 +12,7 @@ export async function jSearchEngine() {
     alert("You have to wait a few minutes to complete the scraping process!");
     console.log("jSearchEngine Start", new Date().getTime() - 3600 * 24 * 7)
 
-    const jSearchJobs = ((await chrome.storage.local.get("jSearchJobs")).jSearchJobs || []).filter((job) => job.job_posted_at_timestamp > new Date().getTime() - 3600 * 24 * 7) || [];
+    let jSearchJobs = ((await chrome.storage.local.get("jSearchJobs")).jSearchJobs || []).filter((job) => job.job_posted_at_timestamp > new Date().getTime() - 3600 * 24 * 7) || [];
     const jSJobsIds = jSearchJobs.map((jSJob) => jSJob.job_id);
     
     let keyIndex = 0;
@@ -24,7 +24,8 @@ export async function jSearchEngine() {
       try {
         const jobs = await fetchJobs({ ...jSearchSettings, key: jSearchSettings.APIKeys[keyIndex], page });
         const filteredJobs = jobs.filter((job) => !jSJobsIds.includes(job.job_id));
-        await chrome.storage.local.set({ "jSearchJobs": [...jSearchJobs, ...filteredJobs] });
+        jSearchJobs = [...jSearchJobs, ...filteredJobs];
+        await chrome.storage.local.set({ "jSearchJobs": jSearchJobs });
         
         updated = true;
 
